@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+// in this file contain the details that need to enter the card
+// made a class product to have in the item card in itemcard.dart
 class Product {
   final String image, title, description;
   final int price, size, id;
@@ -14,7 +15,7 @@ class Product {
     this.color,
   });
 }
-
+// details neede to enter in the card
 List<Product> products = [
   Product(
       id: 1,
@@ -65,6 +66,61 @@ List<Product> products = [
     image: "assets/images/bag_6.png",
     color: Color(0xFFAEAEAE),
   ),
+  Product(
+    id: 7,
+    title: "Runner",
+    price: 140,
+    size: 5-12,
+    description: dummyText,
+    image: "assest/image/shoe2.png",
+    color: Color(0xFFAEAEAE),
+  ),
+  Product(
+    id: 8,
+    title: "Runner",
+    price: 240,
+    size: 5-12,
+    description: dummyText,
+    image: "assest/image/shoe3.png",
+    color: Color(0xFFFB7883)
+  ),
+  Product(
+      id: 9,
+      title: "Summer Wear",
+      price: 540,
+      size: 38,
+      description: dummyText,
+      image: "assest/image/women.jpeg",
+    color: Color(0xFFAEAEAE),
+  ),
+  Product(
+      id: 10,
+      title: "winter wear",
+      price: 740,
+      size: 42,
+      description: dummyText,
+      image: "assest/image/men.jpeg",
+    color: Colors.white,
+  ),
+  Product(
+    id: 11,
+    title: "causal wear",
+    price: 570,
+    size: 42,
+    description: dummyText,
+    image: "assets/images/ll.jpeg",
+    color: Colors.white,
+  ),
+  Product(
+    id: 12,
+    title: "causal wear",
+    price: 640,
+    size: 42,
+    description: dummyText,
+    image: "assets/images/soo.jpeg",
+    color: Colors.white,
+  ),
+
 ];
 
 String dummyText =

@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+// this file is a part of the body file
+//it contain code of function categories()
 
+import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class Categories extends StatefulWidget {
@@ -8,7 +10,7 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-  List<String> categories = ["Hand bag", "Jewellery", "Footwear", "Dresses"];
+  List<String> categories = ["All","Dresses",  "Footwear", "Bags","Accessories"];
   // By default our first item will be selected
   int selectedIndex = 0;
   @override
@@ -25,7 +27,7 @@ class _CategoriesState extends State<Categories> {
       ),
     );
   }
-
+// this is custom widget that made for the code to move the categorise or fuction to select it
   Widget buildCategory(int index) {
     return GestureDetector(
       onTap: () {

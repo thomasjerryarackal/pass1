@@ -1,6 +1,8 @@
+
+//this the function that makes cards in the product list
+
 import 'package:flutter/material.dart';
 import 'package:propaert/componets/Product.dart';
-
 import 'constants.dart';
 
 class ItemCard extends StatelessWidget {
@@ -22,10 +24,6 @@ class ItemCard extends StatelessWidget {
           Expanded(
             child: Container(
               padding: EdgeInsets.all(kDefaultPaddin),
-              // For  demo we use fixed height  and width
-              // Now we dont need them
-              // height: 180,
-              // width: 160,
               decoration: BoxDecoration(
                 color: product.color,
                 borderRadius: BorderRadius.circular(16),

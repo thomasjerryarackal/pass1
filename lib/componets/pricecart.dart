@@ -40,6 +40,7 @@ class PriceCourt extends StatelessWidget {
                       color: Colors.purple
                   ),),
                   IconButton(
+                    onPressed: (){},
                     icon: Icon(
                       Icons.favorite_border,
                       color: Colors.purple,

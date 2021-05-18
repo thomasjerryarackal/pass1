@@ -1,4 +1,6 @@
+//this main is the start page - dashboard of the app
 import 'package:flutter/material.dart';
+import 'package:propaert/Brands.dart';
 import 'package:propaert/componets/Reuse.dart';
 import 'package:propaert/componets/pricecart.dart';
 import 'ProductPage.dart';
@@ -18,6 +20,7 @@ class Product extends StatelessWidget {
       home: MyHomePage(),
       routes: {
         '/ProductPage' : (context)=>ProductPage(),
+        '/Brands':(context)=>Brands(),
       },
     );
   }
@@ -33,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff4ecf8),
+      //appbar/ navigation bar of the dashboard
       appBar: AppBar(
         brightness: Brightness.light,
         backgroundColor: Colors.transparent,
@@ -61,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               height: 30,
               width: 150,
+              // myshoppingcart is the name of the app which i have given
               child: Text("MyShoppingCart",
                 style: TextStyle(
                   fontSize: 25,
@@ -107,6 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            // this container is about the search bar
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -143,6 +149,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            // this about below part of the search bar(all)
+            //part 1
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -154,11 +162,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),),
                     SizedBox(height: 20,),
+                    //this the begin of the scroll under the category heading
                     Container(
                       height: 250,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
+                          // createmainlist is the function called for making card in the category
                           createMainList('men', 'men'),
                           createMainList('women', 'women'),
                           createMainList('kids', 'kids',),
@@ -168,6 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     SizedBox(height: 20,),
+                    //part 2
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Row(
@@ -177,7 +188,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 30,
                           ),),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.pushNamed(context, '/Brands');
+                            },
                             child: Text(
                               'See All',
                               style: TextStyle(
@@ -192,11 +205,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     SizedBox(height: 20,),
+                    // this the begin of the scroll under the category brands
                     Container(
                       height: 130,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
+                          //court is the function to make the card in the horizontal scroll
+                          //it is present in the folder-component and file-reuse.dart
                           Court(
                             name: 'sbrand.png',
                             onTap:(){
@@ -227,11 +243,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             onTap:(){
                               Navigator.pushNamed(context, '/ProductPage');
                             },),
-
                         ],
                       ),
                     ),
                     SizedBox(height: 20,),
+                    //part3
+                    //this the begin of the scroll under the now trending
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Row(
@@ -256,6 +273,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     SizedBox(height: 20,),
+                    //PriceCourt is the function to make the card in the horizontal scroll
+                    //it is present in the folder-component and file-pricecart.dart
                     Container(
                       height: 260,
                       child:ListView(
@@ -299,13 +318,19 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
   //funtion container for main list items display
+  // has parameter img name and name of product
   Container createMainList(String img, String name,)
   {
     return Container(
       height: 310,
       width: 330,
       child: InkWell(
-        onTap: openProductPage,
+        onTap:(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ProductPage(names: '$name')),
+          );
+        },
         child: Stack(
           children: <Widget>[
             Container(
@@ -373,6 +398,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+  // it is function to navigate to next page
   void openProductPage()
   {
     Navigator.pushNamed(context, '/ProductPage');

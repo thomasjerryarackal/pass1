@@ -1,13 +1,13 @@
-//this is the second page of the app
-//this file contain design of product list
+//this is the third page of the app
+//this file contain design of brand list
+
 
 import 'package:flutter/material.dart';
-import 'componets/body.dart';
+import 'package:propaert/componets/Lists.dart';
+
 import 'componets/constants.dart';
 
-class ProductPage extends StatelessWidget {
-  ProductPage({ this.names});
-  final String names;
+class Brands extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,13 +69,8 @@ class ProductPage extends StatelessWidget {
           SizedBox(width: kDefaultPaddin / 2)
         ],
       ),
-      // the body fuction is written in another file-body.dart
-      body: Body(name: '$names'),
+      // the body fuction List is written in another file-lists.dart
+      body: Lists(),
     );
-
   }
-
-
 }
-
-
